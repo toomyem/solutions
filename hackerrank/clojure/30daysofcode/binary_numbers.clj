@@ -10,7 +10,6 @@
 
 (let [scanner (Scanner. System/in)]
   (loop [n (.nextInt scanner)]
-    (if (> n 0)
-      (do
-        (println (make-binary (.nextInt scanner)))
-        (recur (- n 1))))))
+    (when (> n 0)
+      (println (make-binary (.nextInt scanner)))
+      (recur (- n 1)))))
